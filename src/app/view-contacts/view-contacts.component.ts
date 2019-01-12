@@ -18,4 +18,8 @@ export class ViewContactsComponent implements OnInit {
     this.contacts = this.contactService.onViewContacts();
     console.log(this.contacts);
   }
+
+  onClicked() {
+    console.log('clicked');
+  }
 }
