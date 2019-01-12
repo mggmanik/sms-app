@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Contact} from '../models/contact';
+import {ContactService} from '../services/contact.service';
 
 @Component({
   selector: 'app-add-contact',
@@ -11,7 +12,7 @@ export class AddContactComponent implements OnInit {
 
   contact: Contact;
 
-  constructor() {
+  constructor(private contactService: ContactService) {
   }
 
   ngOnInit() {
@@ -21,8 +22,10 @@ export class AddContactComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    this.contact = new Contact(form.value.firstName, form.value.lastName, form.value.phoneNumber);
-    console.log(this.contact);
+    const now = new Date();
+    this.contact = new Contact(form.value.firstName, form.value.lastName, form.value.phoneNumber, now);
+    this.contactService.onAddContacts(this.contact);
+    form.resetForm();
   }
 
 }

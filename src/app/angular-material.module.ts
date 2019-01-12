@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {
   MatButtonModule,
   MatDialogModule,
-  MatFormFieldModule,
-  MatInputModule,
+  MatFormFieldModule, MatIconModule,
+  MatInputModule, MatListModule,
   MatPaginatorModule,
   MatTableModule,
   MatToolbarModule
@@ -19,7 +19,9 @@ import {
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule,
+    MatIconModule
   ]
 })
 export class AngularMaterialModule {

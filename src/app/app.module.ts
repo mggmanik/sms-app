@@ -7,12 +7,14 @@ import { HeaderComponent } from './header/header.component';
 import {AngularMaterialModule} from './angular-material.module';
 import {AddContactComponent} from './add-contact/add-contact.component';
 import {FormsModule} from '@angular/forms';
+import {ViewContactsComponent} from './view-contacts/view-contacts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AddContactComponent
+    AddContactComponent,
+    ViewContactsComponent
   ],
   imports: [
     FormsModule,
