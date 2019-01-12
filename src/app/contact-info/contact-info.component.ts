@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ContactService} from '../services/contact.service';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {Contact} from '../models/contact';
 
 @Component({
   selector: 'app-contact-info',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactInfoComponent implements OnInit {
 
-  constructor() { }
+  contactId: string;
+  contact: Contact;
+
+  constructor(private contactService: ContactService, public route: ActivatedRoute, public router: Router) {
+  }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((paramMap: ParamMap) => {
+      this.contactId = paramMap.get('id');
+      this.contactService.getContact(this.contactId).subscribe(result => {
+        this.contact = result.contact;
+      });
+    });
   }
 
 }

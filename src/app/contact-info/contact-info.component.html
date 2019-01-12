@@ -1,3 +1,23 @@
-<p>
-  contact-info works!
-</p>
+<div class="mt-5 d-flex justify-content-center">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+      </div>
+      <mat-card-title>{{contact?.firstName}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        Name: {{contact?.firstName}} {{contact?.lastName}}
+      </p>
+      <p>
+        Phone Number: {{contact?.phoneNumber}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>SEND</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

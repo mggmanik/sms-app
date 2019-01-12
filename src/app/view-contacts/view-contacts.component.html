@@ -1,5 +1,5 @@
 <div class="mt-5 d-flex justify-content-center">
-  <mat-list *ngIf="contacts.length>0">
+  <mat-list *ngIf="contacts">
     <h3 mat-subheader>Contacts</h3>
     <mat-list-item *ngFor="let contact of contacts" routerLink="/contact/{{contact._id}}">
       <mat-icon mat-list-icon>account_circle</mat-icon>

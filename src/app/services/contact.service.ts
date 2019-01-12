@@ -1,22 +1,32 @@
 import {Injectable} from '@angular/core';
 import {Contact} from '../models/contact';
+import {environment} from '../../environments/environment';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({'content-Type': 'application/json'})
+};
+
+const BACKEND_URL = environment.apiUrl + '/contact';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
 
-  private contacts: Contact[] = [];
-
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
-  onAddContacts(contact: Contact) {
-    this.contacts.push(contact);
-    console.log(this.contacts);
+  onAddContacts(contact: Contact): Observable<Contact> {
+    return this.http.post<Contact>(BACKEND_URL, contact, httpOptions);
   }
 
-  onViewContacts() {
-    return this.contacts;
+  onViewContacts(): Observable<{ contacts: Contact[] }> {
+    return this.http.get<{ contacts: Contact[] }>(BACKEND_URL);
+  }
+
+  getContact(id: string): Observable<{ contact: Contact }> {
+    return this.http.get<{ contact: Contact }>(`${BACKEND_URL}/${id}`);
   }
 }

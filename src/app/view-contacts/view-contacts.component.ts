@@ -15,8 +15,9 @@ export class ViewContactsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.contacts = this.contactService.onViewContacts();
-    console.log(this.contacts);
+    this.contactService.onViewContacts().subscribe(result => {
+      this.contacts = result.contacts;
+    });
   }
 
   onClicked() {
