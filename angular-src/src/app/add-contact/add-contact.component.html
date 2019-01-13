@@ -1,0 +1,43 @@
+<div class="mt-5 d-flex justify-content-center">
+  <form (submit)="onAddToContactList(addToContactForm)" #addToContactForm="ngForm" class="example-form">
+    <mat-form-field class="example-full-width">
+      <input
+        required
+        name="firstName"
+        type="text"
+        ngModel
+        matInput
+        placeholder="First Name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        required
+        name="lastName"
+        type="text"
+        ngModel
+        matInput
+        placeholder="Last Name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        required
+        maxlength="10"
+        name="phoneNumber"
+        type="text"
+        ngModel
+        #phoneNumberInput="ngModel"
+        matInput
+        placeholder="Phone Number">
+      <mat-error *ngIf="phoneNumberInput.invalid">Please enter a valid Phone Number!</mat-error>
+    </mat-form-field>
+
+    <hr>
+
+    <div class="float-right">
+      <button mat-button color="primary" type="submit">Add</button>
+    </div>
+  </form>
+</div>
+
