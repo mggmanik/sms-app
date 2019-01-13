@@ -17,7 +17,10 @@ export class SendMessageComponent implements OnInit {
   message: Message;
   OTP = Math.floor(100000 + Math.random() * 900000);
 
-  constructor(private contactService: ContactService, private messageService: MessageService, private route: ActivatedRoute, private router: Router) {
+  constructor(private contactService: ContactService,
+              private messageService: MessageService,
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
