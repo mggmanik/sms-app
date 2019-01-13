@@ -4,13 +4,11 @@ const uniqueValidator = require('mongoose-unique-validator');
 const contactSchema = mongoose.Schema({
   firstName: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   lastName: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   phoneNumber: {
     type: String,

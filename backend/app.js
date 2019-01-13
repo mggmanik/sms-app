@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const contactRoutes = require('./routes/contact-router');
+const messageRoutes = require('./routes/message-router');
 const app = express();
 
 mongoose
@@ -25,5 +26,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/contact', contactRoutes);
+app.use('/api/message', messageRoutes);
 
 module.exports = app;

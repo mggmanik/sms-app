@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {ViewContactsComponent} from './view-contacts/view-contacts.component';
 import {ContactInfoComponent} from './contact-info/contact-info.component';
 import {HttpClientModule} from '@angular/common/http';
+import {SendMessageComponent} from './send-message/send-message.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     AddContactComponent,
     ViewContactsComponent,
-    ContactInfoComponent
+    ContactInfoComponent,
+    SendMessageComponent
   ],
   imports: [
     FormsModule,

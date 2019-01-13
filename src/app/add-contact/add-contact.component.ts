@@ -25,7 +25,7 @@ export class AddContactComponent implements OnInit {
     const now = new Date();
     this.contact = new Contact(form.value.firstName, form.value.lastName, form.value.phoneNumber, now);
     this.contactService.onAddContacts(this.contact).subscribe(() => {
-      console.log('Movie Added');
+      console.log('Contact Added');
     });
     form.resetForm();
   }

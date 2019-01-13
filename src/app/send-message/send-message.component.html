@@ -1,0 +1,24 @@
+<div class="mt-5 d-flex justify-content-center">
+
+  <form (submit)="onSendMessage(sendForm)" #sendForm="ngForm" class="example-form">
+    <div class="details">
+      <h3>{{contact?.firstName}}</h3>
+      <p>{{contact?.phoneNumber}}</p>
+    </div>
+
+    <hr>
+
+    <mat-form-field class="example-full-width">
+      <input
+        required
+        name="message"
+        type="text"
+        matInput
+        value="Hi. Your OTP is: {{OTP}}">
+    </mat-form-field>
+
+    <div class="float-right">
+      <button mat-button color="primary" type="submit">Send</button>
+    </div>
+  </form>
+</div>
