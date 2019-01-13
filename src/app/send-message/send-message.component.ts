@@ -33,7 +33,6 @@ export class SendMessageComponent implements OnInit {
 
   onSendMessage() {
     this.messageService.onSendMessage(this.message).subscribe(() => {
-      console.log('Message Sent!');
       this.router.navigate(['/view-contacts']);
     });
   }
