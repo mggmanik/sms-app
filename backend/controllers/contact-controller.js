@@ -15,7 +15,7 @@ exports.createContact = (req, res) => {
       });
     }).catch(err => {
     res.status(500).json({
-      message: 'Creation of contact failed'
+      message: 'Creation of contact failed!'
     });
   });
 };

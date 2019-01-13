@@ -1,17 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './header/header.component';
 import {AngularMaterialModule} from './angular-material.module';
 import {AddContactComponent} from './add-contact/add-contact.component';
 import {FormsModule} from '@angular/forms';
 import {ViewContactsComponent} from './view-contacts/view-contacts.component';
 import {ContactInfoComponent} from './contact-info/contact-info.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {SendMessageComponent} from './send-message/send-message.component';
 import {ListMessagesComponent} from './list-messages/list-messages.component';
+import {ErrorComponent} from './error/error.component';
+import {ErrorInterceptor} from './error/error-interceptor';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {ListMessagesComponent} from './list-messages/list-messages.component';
     ViewContactsComponent,
     ContactInfoComponent,
     SendMessageComponent,
-    ListMessagesComponent
+    ListMessagesComponent,
+    ErrorComponent
   ],
   imports: [
     FormsModule,
@@ -31,7 +34,11 @@ import {ListMessagesComponent} from './list-messages/list-messages.component';
     AngularMaterialModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
