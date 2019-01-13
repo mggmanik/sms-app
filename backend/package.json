@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "nodemon server.js"
-
   },
   "dependencies": {
     "express": "^4.16.4",
