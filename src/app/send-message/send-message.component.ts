@@ -17,7 +17,7 @@ export class SendMessageComponent implements OnInit {
   message: Message;
   OTP = Math.floor(100000 + Math.random() * 900000);
 
-  constructor(private contactService: ContactService, private messageService: MessageService, public route: ActivatedRoute, public router: Router) {
+  constructor(private contactService: ContactService, private messageService: MessageService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -34,6 +34,7 @@ export class SendMessageComponent implements OnInit {
   onSendMessage() {
     this.messageService.onSendMessage(this.message).subscribe(() => {
       console.log('Message Sent!');
+      this.router.navigate(['/view-contacts']);
     });
   }
 

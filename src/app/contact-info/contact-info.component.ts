@@ -13,7 +13,7 @@ export class ContactInfoComponent implements OnInit {
   contactId: string;
   contact: Contact;
 
-  constructor(private contactService: ContactService, public route: ActivatedRoute, public router: Router) {
+  constructor(private contactService: ContactService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
