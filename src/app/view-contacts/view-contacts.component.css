@@ -5,3 +5,7 @@
 .mat-list-item:hover {
   background-color: ghostwhite;
 }
+
+p {
+  color: grey;
+}

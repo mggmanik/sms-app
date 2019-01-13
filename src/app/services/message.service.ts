@@ -15,10 +15,32 @@ const BACKEND_URL = environment.apiUrl + '/message';
 })
 export class MessageService {
 
+  private messages: Message[];
+
   constructor(private http: HttpClient) {
   }
 
   onSendMessage(message: Message): Observable<Message> {
     return this.http.post<Message>(BACKEND_URL, message, httpOptions);
+  }
+
+  onGetMessages(): Observable<{ messages: Message[] }> {
+    return this.http.get<{ messages: Message[] }>(BACKEND_URL);
+  }
+
+  sortMessages(messages: Message[]) {
+
+    messages.sort((message1, message2) => {
+      if (message1.date > message2.date) {
+        return -1;
+      } else if (message1.date < message2.date) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+
+    this.messages = messages;
+    return this.messages;
   }
 }

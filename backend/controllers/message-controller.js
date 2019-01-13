@@ -35,3 +35,16 @@ exports.addMessage = (req, res) => {
     });
   });
 };
+
+exports.getMessages = (req, res) => {
+  Message.find().then(docs => {
+    res.status(200).json({
+      messages: docs,
+      message: 'Messages fetched successfully!'
+    });
+  }).catch(err => {
+    res.status(500).json({
+      message: 'Messages Not Fetched!'
+    });
+  });
+};

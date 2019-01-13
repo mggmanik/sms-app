@@ -11,6 +11,7 @@ import {ViewContactsComponent} from './view-contacts/view-contacts.component';
 import {ContactInfoComponent} from './contact-info/contact-info.component';
 import {HttpClientModule} from '@angular/common/http';
 import {SendMessageComponent} from './send-message/send-message.component';
+import {ListMessagesComponent} from './list-messages/list-messages.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {SendMessageComponent} from './send-message/send-message.component';
     AddContactComponent,
     ViewContactsComponent,
     ContactInfoComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    ListMessagesComponent
   ],
   imports: [
     FormsModule,
