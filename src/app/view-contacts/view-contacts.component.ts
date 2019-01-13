@@ -20,7 +20,10 @@ export class ViewContactsComponent implements OnInit {
     });
   }
 
-  onClicked() {
-    console.log('clicked');
+  onDelete(id: string) {
+    this.contactService.deleteContact(id).subscribe(() => {
+      this.contacts = this.contacts.filter(contact => contact._id !== id);
+      console.log('Contact Deleted!');
+    });
   }
 }

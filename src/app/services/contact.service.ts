@@ -29,4 +29,8 @@ export class ContactService {
   getContact(id: string): Observable<{ contact: Contact }> {
     return this.http.get<{ contact: Contact }>(`${BACKEND_URL}/${id}`);
   }
+
+  deleteContact(id: string): Observable<Contact> {
+    return this.http.delete<Contact>(`${BACKEND_URL}/${id}`, httpOptions);
+  }
 }
