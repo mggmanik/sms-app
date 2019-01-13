@@ -2,6 +2,10 @@ p {
   color: grey;
 }
 
+.mat-list-item:hover {
+  background-color: ghostwhite;
+}
+
 .time-align{
   width: 300px;
   text-align: right;
