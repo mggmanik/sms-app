@@ -1,5 +1,7 @@
 import {Contact} from './contact';
 
+// Message Model
+
 export class Message {
   _id: string;
 

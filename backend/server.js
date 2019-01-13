@@ -2,6 +2,8 @@ const app = require("./app");
 const debug = require("debug")("node-angular");
 const http = require("http");
 
+// creating a node.js server and starting it on port 3000
+
 const normalizePort = val => {
   var port = parseInt(val, 10);
 

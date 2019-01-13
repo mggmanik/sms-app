@@ -6,6 +6,9 @@ const contactRoutes = require('./routes/contact-router');
 const messageRoutes = require('./routes/message-router');
 const app = express();
 
+// Express: Third party library that provides a robust set of features for web applications
+// Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+
 mongoose
   .connect(`mongodb+srv://mggmanik:${process.env.MONGO_ATLAS_PW}@cluster0-seypl.mongodb.net/node-angular?retryWrites=true`, {useNewUrlParser: true})
   .then(() => {

@@ -20,6 +20,8 @@ export class ViewContactsComponent implements OnInit {
     });
   }
 
+  // onLong press delete contacts
+
   onDelete(id: string) {
     this.contactService.deleteContact(id).subscribe(() => {
       this.contacts = this.contacts.filter(contact => contact._id !== id);

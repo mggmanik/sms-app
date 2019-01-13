@@ -10,6 +10,8 @@ const httpOptions = {
 
 const BACKEND_URL = environment.apiUrl + '/message';
 
+// Communicates with the node.js server to do the respective CRUD on Messages.
+
 @Injectable({
   providedIn: 'root'
 })

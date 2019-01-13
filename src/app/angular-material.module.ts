@@ -9,6 +9,7 @@ import {
   MatToolbarModule
 } from '@angular/material';
 
+// A separate module for Angular Material Components used in the Application
 
 @NgModule({
   exports: [

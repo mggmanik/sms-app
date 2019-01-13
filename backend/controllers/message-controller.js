@@ -5,6 +5,8 @@ const accountSid = key.t_key.ACCOUNT_SID;
 const authToken = key.t_key.AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
 
+// handler methods for CRUD on Messages and twilio(third party library) for sending messages
+
 exports.addMessage = (req, res) => {
   const message = new Message({
     OTP: req.body.OTP,

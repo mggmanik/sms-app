@@ -1,5 +1,7 @@
 const Contact = require('../models/contact');
 
+// handler methods for CRUD on Contacts
+
 exports.createContact = (req, res) => {
   const contact = new Contact({
     firstName: req.body.firstName,

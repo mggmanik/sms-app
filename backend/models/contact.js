@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
+// Contcat Model
+
 const contactSchema = mongoose.Schema({
   firstName: {
     type: String,

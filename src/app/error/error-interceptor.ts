@@ -5,6 +5,8 @@ import {Injectable} from '@angular/core';
 import {catchError} from 'rxjs/operators';
 import {ErrorComponent} from './error.component';
 
+// Check for errors if any HTTP request brings error with it and displays as a dialog on the screen
+
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 

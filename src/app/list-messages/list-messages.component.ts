@@ -20,6 +20,8 @@ export class ListMessagesComponent implements OnInit {
     });
   }
 
+  // onLong press delete messages
+
   onDelete(id: string) {
     this.messageService.deleteMessage(id).subscribe(() => {
       this.messages = this.messages.filter(message => message._id !== id);

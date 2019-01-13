@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
+// Message Model
+
 const messageSchema = mongoose.Schema({
   OTP: {
     type: Number,
