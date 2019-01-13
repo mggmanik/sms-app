@@ -43,4 +43,8 @@ export class MessageService {
     this.messages = messages;
     return this.messages;
   }
+
+  deleteMessage(id: string): Observable<Message> {
+    return this.http.delete<Message>(`${BACKEND_URL}/${id}`, httpOptions);
+  }
 }

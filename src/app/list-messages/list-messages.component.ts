@@ -19,4 +19,11 @@ export class ListMessagesComponent implements OnInit {
       this.messages = this.messageService.sortMessages(result.messages);
     });
   }
+
+  onDelete(id: string) {
+    this.messageService.deleteMessage(id).subscribe(() => {
+      this.messages = this.messages.filter(message => message._id !== id);
+      console.log('Message Deleted!');
+    });
+  }
 }

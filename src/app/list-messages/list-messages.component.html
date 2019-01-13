@@ -1,7 +1,7 @@
 <div class="mt-5 d-flex justify-content-center">
   <mat-list *ngIf="messages">
     <h3 mat-subheader>Messages</h3>
-    <mat-list-item *ngFor="let message of messages">
+    <mat-list-item *ngFor="let message of messages" (press)="onDelete(message._id)">
       <mat-icon mat-list-icon>speaker_notes</mat-icon>
       <h4 mat-line>{{message.recipient.firstName}} {{message.recipient.lastName}}</h4>
       <p mat-line>OTP: {{message.OTP}}</p>

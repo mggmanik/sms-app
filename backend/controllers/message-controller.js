@@ -48,3 +48,21 @@ exports.getMessages = (req, res) => {
     });
   });
 };
+
+exports.deleteMessage = (req, res) => {
+  Message.deleteOne({_id: req.params.id}).then((result) => {
+    if (result.n > 0) {
+      res.status(200).json({
+        message: 'Message Deleted Successfully!'
+      });
+    } else {
+      res.status(401).json({
+        message: 'Not Authorized!'
+      });
+    }
+  }).catch(err => {
+    res.status(500).json({
+      message: 'Not Able to Delete Message!'
+    });
+  });
+};

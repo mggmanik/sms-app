@@ -4,5 +4,6 @@ const router = expess.Router();
 
 router.post('', MessageController.addMessage);
 router.get('', MessageController.getMessages);
+router.delete('/:id', MessageController.deleteMessage);
 
 module.exports = router;
