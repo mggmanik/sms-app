@@ -41,7 +41,7 @@ module.exports = ".example-form {\n  min-width: 150px;\n  max-width: 500px;\n  w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mt-5 d-flex justify-content-center\">\n  <form (submit)=\"onAddToContactList(addToContactForm)\" #addToContactForm=\"ngForm\" class=\"example-form\">\n    <mat-form-field class=\"example-full-width\">\n      <input\n        required\n        name=\"firstName\"\n        type=\"text\"\n        ngModel\n        matInput\n        placeholder=\"First Name\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input\n        required\n        name=\"lastName\"\n        type=\"text\"\n        ngModel\n        matInput\n        placeholder=\"Last Name\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input\n        required\n        maxlength=\"10\"\n        name=\"phoneNumber\"\n        type=\"text\"\n        ngModel\n        #phoneNumberInput=\"ngModel\"\n        matInput\n        placeholder=\"Phone Number\">\n      <mat-error *ngIf=\"phoneNumberInput.invalid\">Please enter a valid Phone Number!</mat-error>\n    </mat-form-field>\n\n    <hr>\n\n    <div class=\"float-right\">\n      <button mat-button color=\"primary\" type=\"submit\">Add</button>\n    </div>\n  </form>\n</div>\n\n"
+module.exports = "<div class=\"mt-5 d-flex justify-content-center\">\n  <form (submit)=\"onAddToContactList(addToContactForm)\" #addToContactForm=\"ngForm\" class=\"example-form\">\n    <mat-form-field class=\"example-full-width\">\n      <input\n        required\n        name=\"firstName\"\n        type=\"text\"\n        ngModel\n        matInput\n        placeholder=\"First Name\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input\n        required\n        name=\"lastName\"\n        type=\"text\"\n        ngModel\n        matInput\n        placeholder=\"Last Name\">\n    </mat-form-field>\n\n    <mat-form-field class=\"example-full-width\">\n      <input\n        required\n        minlength=\"10\"\n        maxlength=\"10\"\n        name=\"phoneNumber\"\n        type=\"text\"\n        ngModel\n        #phoneNumberInput=\"ngModel\"\n        matInput\n        placeholder=\"Phone Number\">\n      <mat-error *ngIf=\"phoneNumberInput.invalid\">Please enter a valid Phone Number!</mat-error>\n    </mat-form-field>\n\n    <hr>\n\n    <div class=\"float-right\">\n      <button mat-button color=\"primary\" type=\"submit\">Add</button>\n    </div>\n  </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -1098,7 +1098,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/manik/Desktop/otp-app/angular-src/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/manik/Desktop/mean/sms-app/angular-src/src/main.ts */"./src/main.ts");
 
 
 /***/ })
